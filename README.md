@@ -23,6 +23,6 @@ The bot has been tested on the Binance Testnet and has consistently generated ap
 
 Due to my status as a student and limited access to funds, I have not been able to test the bot in a live trading environment. To run the bot on the live Binance Futures market, a starting capital of 60,000 USDT is required for optimal performance, along with 50x leverage.  
 
-If you are an Hedge fund, a state or any kind of trading investor interested in this djob and wanna keep it private, you can contact me on x : https://x.com/___Crixus___  
+If you are an Hedge fund, a state or any kind of trading investor interested in this djob and wanna keep it private, you can contact me on x at [@___Crixus___](https://x.com/___Crixus___).  
 As i can't use this work for myself, i haven't make all the necessary ajustment. Consider the work as many as in progress as in standby.  
 To continue this work i need a realistic test environment. Not a classic backtest env, but an env who is simulating a real market as the algorithm is based on a strategy that influence the market. It is an interactive game. Create such an env require a true team.
