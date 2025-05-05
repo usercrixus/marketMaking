@@ -1,28 +1,47 @@
-# Binance Futures Market-Making Bot
+# Binance Futures Market Making Bot
 
-This Python-based market-making bot is designed to trade on the Binance Futures platform. It operates on the Binance Testnet and has demonstrated significant profits under simulated conditions.  
+This is a handcrafted prototype of a **market making algorithm** designed to operate on the Binance Futures Testnet.
 
-## Requirements
+It was built **without access to simulation engines, replay systems, or proprietary infra** — only raw testnet interactions. The bot dynamically places bid/ask orders based on live orderbook data, inventory exposure, and portfolio sizing.
 
-To use this bot, you need to set up your Binance API credentials in the config.py file:
+---
 
-```python
-API_KEY = "your_binance_api_key"
-API_SECRET = "your_binance_api_secret"
+## 🧠 Strategy Overview
+
+- **Spread-based quoting** around the midprice.
+- **Inventory-aware adaptation**: prices shift dynamically depending on position size and direction.
+- **Defensive pricing logic** when exposure grows: asymmetric quote control to avoid liquidation risk.
+- **Size control** relative to account margin and midprice.
+- **Execution tested in live testnet environment**.
+
+This strategy is **not passive**. It reacts to the market and to itself — a simple, interactive agent in a real game.
+
+---
+
+## ⚠️ Limitations
+
+- No live capital: testnet-only for now.
+- Prototype-level architecture: not optimized for latency or production-grade robustness.
+- Requires a realistic environment to progress further — a simulated live market engine, not a classic backtest, to explore **market influence and agent interaction**.
+
+---
+
+## 🚀 Why this matters
+
+This was built from scratch — alone — as a learning and research tool.  
+If you're a **fund, a desk, or a team building market infrastructure**, and this kind of exploratory thinking speaks to you: feel free to reach out.
+
+I’m currently seeking a team where this type of work can be taken further — with the right tools, data, and mentorship.
+
+---
+
+## Setup
+
+Update your API keys in `config.py`, then:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python main.py
 ```
-
-You can obtain these from your Binance account under API Management.  
-
-Then, python3 -m venv venv, source venv/bin/activate, pip install ccxt, python main.py  
-
-## Performance
-
-The bot has been tested on the Binance Testnet and has consistently generated approximately 50,000 USDC per day. It operates by placing buy and sell orders to profit from the bid-ask spread.  
-
-## Limitations
-
-Due to my status as a student and limited access to funds, I have not been able to test the bot in a live trading environment. To run the bot on the live Binance Futures market, a starting capital of 60,000 USDT is required for optimal performance, along with 50x leverage.  
-
-If you are an Hedge fund, a state or any kind of trading investor interested in this djob and wanna keep it private, you can contact me on x at [@___Crixus___](https://x.com/___Crixus___).  
-As i can't use this work for myself, i haven't make all the necessary ajustment. Consider the work as many as in progress as in standby.  
-To continue this work i need a realistic test environment. Not a classic backtest env, but an env who is simulating a real market as the algorithm is based on a strategy that influence the market. It is an interactive game. Create such an env require a true team.
